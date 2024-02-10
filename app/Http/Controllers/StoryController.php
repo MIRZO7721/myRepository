@@ -53,7 +53,7 @@ class StoryController extends Controller
             abort(403, 'У вас нет прав на модерацию историй.');
         }
 
-        $pendingStories = Story::where('status', 'pending')->get();
+        $pendingStories =  Story::where('status', 'pending')->get();
         return view('stories.moderate', compact('pendingStories'));
     }
     public function moderateAction(Story $story, Request $request) {
